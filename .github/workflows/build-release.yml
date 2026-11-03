@@ -54,9 +54,7 @@ jobs:
 
           gh release view $tag --json tagName 2>$null | Out-Null
           if ($LASTEXITCODE -ne 0) {
-            gh release create $tag $assetPath --title "PartyPlayChecker $tag" --notes "- Adds a draggable status window, player entry and exit alerts, and named profiles.
-- Adds a performance debug overlay and a range circle that turns green when the selected number of players (1-5) is inside, and red otherwise.
-- The 13 m Party Play threshold is provisional for PoE 2."
+            gh release create $tag $assetPath --title "PartyPlayChecker $tag" --notes "Adds draggable player status, entry and exit alerts, saved profiles, performance diagnostics, and a green/red circle controlled by a 1-5 player threshold. The 13 m Party Play range is provisional for PoE 2."
           } else {
             gh release upload $tag $assetPath --clobber
           }
